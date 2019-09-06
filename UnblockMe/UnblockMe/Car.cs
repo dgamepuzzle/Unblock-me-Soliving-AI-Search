@@ -6,25 +6,23 @@ namespace UnblockMe
 {
     class Car
     {
-        public static int count = 0;
+
         public int width;
         public int id;
         public bool alignment;
         public int[] position;
 
-        public Car(int[] position,bool alignment = false,int width = 2)
+        public Car(int id,int[] position,bool alignment = false,int width = 2)
         {
-            this.id = count;
-            count += 1;
-
+            this.id = id;
             this.position = position;
             this.alignment = alignment;
             this.width = width;
         }
 
-        public void move(bool direction,int lenght)
+        public void move(int lenght)
         {
-            if (direction)
+            if (lenght < 0)
             {
                 if (alignment)
                 {
@@ -35,7 +33,7 @@ namespace UnblockMe
                     position[0] += lenght;
                 }
             }
-            else
+            else if (lenght > 0)
             {
                 if (alignment)
                 {

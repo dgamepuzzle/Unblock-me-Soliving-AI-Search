@@ -9,3 +9,14 @@ C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockM
 C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfo.cs
 C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.dll
 C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.pdb
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.deps.json
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.json
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.dev.json
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.dll
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.pdb
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csprojAssemblyReference.cache
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csproj.CoreCompileInputs.cache
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfoInputs.cache
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfo.cs
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.dll
+C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.pdb
