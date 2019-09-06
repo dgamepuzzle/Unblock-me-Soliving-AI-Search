@@ -1,0 +1,11 @@
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.deps.json
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.json
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.dev.json
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.dll
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.pdb
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csprojAssemblyReference.cache
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csproj.CoreCompileInputs.cache
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfoInputs.cache
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfo.cs
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.dll
+C:\Users\cchay\source\repos\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.pdb
