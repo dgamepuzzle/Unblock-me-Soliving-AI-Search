@@ -37,11 +37,11 @@ namespace UnblockMe
             {
                 if (alignment)
                 {
-                    position[1] -= lenght;
+                    position[1] += lenght;
                 }
                 else
                 {
-                    position[0] -= lenght;
+                    position[0] += lenght;
                 }
             }
         }

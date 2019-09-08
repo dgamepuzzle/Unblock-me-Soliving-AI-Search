@@ -6,21 +6,30 @@ namespace UnblockMe
 {
     class Tree : ICloneable{
         //constructor
-        public Tree()
+        public Tree(List<int[]> carBlueprint)
         {
             this.carlist = new List<Car>();
+            this.carBlueprint = carBlueprint;
             this.metric = new int[6][];
-            //add Target Car
-            Car firstCar = new Car(99,new int[]{ 2, 0 }, true, 2);
-            this.carlist.Add(firstCar);
-
+            foreach(int[] item in carBlueprint)
+            {
+                Car carTemp = new Car(
+                       item[0],
+                       new int[] { item[1], item[2] },
+                       Convert.ToBoolean(item[3]),
+                       item[4]
+                    );
+                this.carlist.Add(carTemp);
+            }
         }
         //property
         public static int count = 0;
         public int[][] metric = new int[6][];
+        public List<int[]> carBlueprint;
         public List<Car> carlist;
-        public int index;
-        public int depth;
+        public int index = 0;
+        public int depth = 0;
+        public List<Tree> childList;
 
         public void makeBroad()
         {
@@ -121,15 +130,69 @@ namespace UnblockMe
         public List<Tree> createNewTreeWithAvailableAction()
         {
             List<Tree> treeList = new List<Tree>();
-            foreach(Car car in this.carlist)
+            for(int i = 0; i < this.carlist.Count; i++)
             {
-
+                if(this.checkStepAvailable(carlist[i]).Count != 0)
+                {
+                    foreach(int item in this.checkStepAvailable(carlist[i])){
+                        Tree temp = new Tree(this.carBlueprint);
+                        temp.carlist[i].move(item);
+                        temp.updateBlueprint();
+                        temp.makeBroad();
+                        treeList.Add(temp);
+                    }
+                }
             }
+            this.childList = treeList;
             return treeList;
         }
+
+        public void updateBlueprint()
+        {
+            List<int[]> blueprint = new List<int[]>();
+            foreach(Car car in this.carlist)
+            {
+                blueprint.Add(new int[] { car.id, car.position[0], car.position[1], car.alignment ? 1 : 0, car.width });
+            }
+            this.carBlueprint = blueprint;
+            
+        }
+
+        private void blueprintToCarlist()
+        {
+            foreach (int[] item in this.carBlueprint)
+            {
+                Car carTemp = new Car(
+                       item[0],
+                       new int[] { item[1], item[2] },
+                       Convert.ToBoolean(item[3]),
+                       item[4]
+                    );
+                this.carlist.Add(carTemp);
+            }
+        }
+
         public object Clone()
         {
+            return this.MemberwiseClone();
+        }
 
+        public bool isEqualTo(Tree checkerTree)
+        {
+            int countSimilarity=0;
+            for(int i=0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    if(this.metric[i][j] == checkerTree.metric[i][j])
+                    {
+                        countSimilarity += 1;
+                    }
+                }
+            }
+            if (countSimilarity == 36)
+                return true;
+            return false;
         }
     }
 }

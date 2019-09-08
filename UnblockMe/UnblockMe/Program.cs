@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UnblockMe
 {
@@ -6,55 +7,144 @@ namespace UnblockMe
     {
         static void Main(string[] args)
         {
-            Tree mainBroad = new Tree();
-            Car car1 = new Car(1,new int[]{0,2},true,3);
-            Car car2 = new Car(2,new int[]{0,5},false, 3);
-            Car car3 = new Car(3,new int[]{2,2},false, 3);
-            Car car4 = new Car(4,new int[]{3,4},true, 2);
-            Car car5 = new Car(5,new int[]{4,0},false, 2);
-            Car car6 = new Car(6,new int[]{4,4},false, 2);
-            Car car7 = new Car(7,new int[]{5,1},true, 3);
-
-            mainBroad.carlist.Add(car1);
-            mainBroad.carlist.Add(car2);
-            mainBroad.carlist.Add(car3);
-            mainBroad.carlist.Add(car4);
-            mainBroad.carlist.Add(car5);
-            mainBroad.carlist.Add(car6);
-            mainBroad.carlist.Add(car7);
-
-            mainBroad.makeBroad();
-            mainBroad.showBroad();
-            
-            foreach (Car item in mainBroad.carlist)
+            List<int[]> blueprint = new List<int[]>
             {
-                foreach (int step in mainBroad.checkStepAvailable(item))
+                new int[]{99,2,0,1,2},
+                new int[]{1,0,2,1,3},
+                new int[]{2,0,5,0,3},
+                new int[]{3,2,2,0,3},
+                new int[]{4,3,4,1,2},
+                new int[]{5,4,0,0,2},
+                new int[]{6,4,4,0,2},
+                new int[]{7,5,1,1,3}
+            };
+            List<int[]> EasyBlueprint = new List<int[]>
+            {
+                new int[]{99,2,0,1,2},
+                new int[]{1,0,0,0,2},
+                new int[]{2,0,2,0,2},
+                new int[]{3,0,3,1,2},
+                new int[]{4,1,3,1,3},
+                new int[]{5,3,0,1,2},
+                new int[]{6,3,2,1,2},
+                new int[]{7,4,0,0,2},
+                new int[]{8,5,1,1,2},
+                new int[]{9,4,3,0,2},
+                new int[]{10,4,4,0,2},
+                new int[]{11,4,5,0,2},
+            };
+
+            /*Tree root = new Tree(blueprint);
+
+            root.makeBroad();
+            root.showBroad();
+            Console.WriteLine();*/
+            makeTree(EasyBlueprint);
+
+            Console.WriteLine("Done");
+
+
+
+        }
+
+        public static Tree makeTree(List<int[]> blueprint)
+        {
+            //add first root's child to the queue
+            List<Tree> checkingList = new List<Tree>();
+            Tree root = new Tree(blueprint);
+            root.makeBroad();
+            Queue<Tree> BFS_queue = new Queue<Tree>();
+            foreach (Tree item in root.createNewTreeWithAvailableAction())
+            {
+                if(checkingList.Count == 0)
                 {
-                    Console.WriteLine(item.id+" : "+step);
+                    checkingList.Add(item);
+                    BFS_queue.Enqueue(item);
+                }
+                else
+                {
+                    foreach (Tree checkingTree in checkingList)
+                    {
+                        if (item.isEqualTo(checkingTree))
+                        {
+                            break;
+                        }
+                    }
+                    checkingList.Add(item);
+                    BFS_queue.Enqueue(item);
                 }
             }
-
-            
-            /*Console.WriteLine("");
-            foreach(int item in mainBroad.checkStepAvailable(car1))
+            while(BFS_queue.Count != 0)
             {
-                Console.WriteLine(item);
+                Tree temp = BFS_queue.Dequeue();
+                foreach (Tree item in temp.createNewTreeWithAvailableAction())
+                {
+                    bool checkSimBool = false;
+                    foreach (Tree checkingTree in checkingList)
+                    {
+                        if (item.isEqualTo(checkingTree))
+                        {
+                            checkSimBool = true;
+                            /*Console.WriteLine("collide !!!");
+                            item.showBroad();
+                            Console.WriteLine("======================================");
+                            checkingTree.showBroad();
+                            Console.WriteLine("");*/
+                            break;
+                        }
+                    }
+                    if (!checkSimBool)
+                    {
+                        checkingList.Add(item);
+                        BFS_queue.Enqueue(item);
+                        item.showBroad();
+                        Console.WriteLine("Checking List :"+checkingList.Count);
+                        Console.WriteLine();
+                    }
+                }
+
             }
-            car1.move(-1);
-            mainBroad.makeBroad();
-            mainBroad.showBroad();
-            foreach (int item in mainBroad.checkStepAvailable(car1))
+
+            return root;
+        }
+
+        public void testIterate(Tree root)
+        {
+            foreach (Tree item in root.createNewTreeWithAvailableAction())
             {
-                Console.WriteLine(item);
-            }*/
+                item.makeBroad();
+                item.showBroad();
+                Console.WriteLine();
+            }
 
+            Console.WriteLine("=================================================");
 
-            /*car1.move(false,2);
-            car2.move(true,1);
+            foreach (Tree i in root.childList)
+            {
+                foreach (Tree j in i.createNewTreeWithAvailableAction())
+                {
+                    j.makeBroad();
+                    j.showBroad();
+                    Console.WriteLine();
+                }
+                Console.WriteLine("=================================================");
+            }
 
-            mainBroad.makeBroad();
-            mainBroad.showBroad();*/
+            foreach (Tree i in root.childList)
+            {
+                foreach (Tree j in i.childList)
+                {
+                    foreach (Tree k in j.createNewTreeWithAvailableAction())
+                    {
+                        j.makeBroad();
+                        j.showBroad();
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine("=================================================");
+                }
 
+            }
+     
         }
     }
 }
