@@ -10,7 +10,7 @@ namespace UnblockMe
         {
             this.carlist = new List<Car>();
             this.carBlueprint = carBlueprint;
-            this.metric = new int[6][];
+            this.metric = new int[8][];
             foreach(int[] item in carBlueprint)
             {
                 Car carTemp = new Car(
@@ -36,7 +36,15 @@ namespace UnblockMe
             // init array with all 0
             for (int i = 0; i < this.metric.Length; i++)
             {
-                this.metric[i] = new int[] { 0, 0, 0, 0, 0, 0 };
+                if(i == 0 || i == this.metric.Length-1)
+                {
+                    this.metric[i] = new int[] { 100, 100,100, 100, 100, 100, 100, 100 };
+                }
+                else
+                {
+                    this.metric[i] = new int[] { 100, 0, 0, 0, 0, 0, 0, 100 };
+                }
+                
             }
 
             for (int i = 0 ;i < this.carlist.Count; i++)
@@ -59,7 +67,9 @@ namespace UnblockMe
             {
                 for (int j = 0; j < this.metric[i].Length; j++)
                 {
-                    if(this.metric[i][j] < 10)
+                    if(this.metric[i][j] < 10 && this.metric[i][j] >= 0)
+                        Console.Write("  ");
+                    else if (this.metric[i][j] < 100)
                         Console.Write(" ");
                     Console.Write(this.metric[i][j] + " ");
                 }
@@ -73,56 +83,30 @@ namespace UnblockMe
             if (car.alignment)
             {
                 //check on the leftside
-                for (int i = 1; i <= car.position[1]; i++)
+                if (this.metric[car.position[0]][car.position[1]-1] == 0)
                 {
-                    if (car.position[1] != 0 && this.metric[car.position[0]][car.position[1]-i] == 0)
-                    {
-                        returnValue.Add(-i);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    returnValue.Add(-1);
                 }
                 //check on the rightside
-                for(int i = car.position[1]+car.width; i <= 5 ; i++)
+                if (this.metric[car.position[0]][car.position[1] + car.width] == 0)
                 {
-                    if (car.position[1] + car.width != 5 && this.metric[car.position[0]][i] == 0)
-                    {
-                        returnValue.Add(i - car.position[1] - car.width + 1);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    returnValue.Add(1);
                 }
             }
             else
             {
                 //check on the top
-                for (int i = 1; i <= car.position[0]; i++)
+                if (this.metric[car.position[0] - 1][car.position[1]] == 0)
                 {
-                    if (car.position[0] != 0 && this.metric[car.position[0] - i][car.position[1]] == 0)
-                    {
-                        returnValue.Add(-i);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    returnValue.Add(-1);
                 }
+
                 //check on the bottom
-                for (int i = car.position[0] + car.width; i <= 5; i++)
+                if (this.metric[car.position[0] + car.width][car.position[1]] == 0)
                 {
-                    if (car.position[0] + car.width != 5 && this.metric[i][car.position[1]] == 0)
-                    {
-                        returnValue.Add(i -car.position[0] - car.width +1);
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    returnValue.Add(1);
                 }
+
             }
             return returnValue;
         }
@@ -139,6 +123,7 @@ namespace UnblockMe
                         temp.carlist[i].move(item);
                         temp.updateBlueprint();
                         temp.makeBroad();
+                        temp.depth = this.depth + 1;
                         treeList.Add(temp);
                     }
                 }
@@ -172,17 +157,12 @@ namespace UnblockMe
             }
         }
 
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
-
         public bool isEqualTo(Tree checkerTree)
         {
             int countSimilarity=0;
-            for(int i=0; i < 6; i++)
+            for(int i=1; i <= 6; i++)
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 1; j <= 6; j++)
                 {
                     if(this.metric[i][j] == checkerTree.metric[i][j])
                     {
@@ -193,6 +173,16 @@ namespace UnblockMe
             if (countSimilarity == 36)
                 return true;
             return false;
+        }
+
+        public bool isReachGoal()
+        {
+            return metric[this.carlist[0].position[0]][this.carlist[0].position[1]+2] == 100;
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

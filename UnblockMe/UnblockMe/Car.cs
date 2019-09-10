@@ -10,13 +10,20 @@ namespace UnblockMe
         public int width;
         public int id;
         public bool alignment;
-        public int[] position;
+        public int[] position = new int[2];
 
         public Car(int id,int[] position,bool alignment = false,int width = 2)
         {
             this.id = id;
             this.position = position;
-            this.alignment = alignment;
+            if (id%2 == 0)
+            {
+                this.alignment = false;
+            }
+            else
+            {
+                this.alignment = true;
+            }
             this.width = width;
         }
 
