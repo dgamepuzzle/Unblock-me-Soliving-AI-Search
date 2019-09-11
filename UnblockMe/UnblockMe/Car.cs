@@ -29,26 +29,35 @@ namespace UnblockMe
 
         public void move(int lenght)
         {
+            // (-1)
             if (lenght < 0)
             {
+                //if horizontal car
                 if (alignment)
                 {
+                    // y + (-1) = go up 
                     position[1] += lenght;
+                    Console.Write(" Go Left, \n");
                 }
                 else
                 {
+                    // x + (-1) = go left
                     position[0] += lenght;
+                    Console.Write(" Go Up, \n");
                 }
             }
+            // right and bottom (length == 1)
             else if (lenght > 0)
             {
                 if (alignment)
                 {
                     position[1] += lenght;
+                    Console.Write(" Go Right, \n");
                 }
                 else
                 {
                     position[0] += lenght;
+                    Console.Write(" Go Down, \n");
                 }
             }
         }

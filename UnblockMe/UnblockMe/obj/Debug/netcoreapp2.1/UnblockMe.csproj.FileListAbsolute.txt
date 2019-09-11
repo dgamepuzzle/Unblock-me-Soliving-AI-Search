@@ -20,3 +20,14 @@ C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.
 C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfo.cs
 C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.dll
 C:\repo\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.pdb
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.deps.json
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.json
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.dev.json
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.dll
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.pdb
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csprojAssemblyReference.cache
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csproj.CoreCompileInputs.cache
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfoInputs.cache
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfo.cs
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.dll
+D:\CE_KMITL\CE-4D-1\AI\assignment_1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.pdb

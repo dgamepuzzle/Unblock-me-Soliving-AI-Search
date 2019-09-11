@@ -30,6 +30,68 @@ namespace UnblockMe
         public int index = 0;
         public int depth = 0;
         public List<Tree> childList;
+        public int action ;
+
+        // public int setAction(int car,int move){
+        //     if(car==-1&&move==1){
+        //         return 1;
+        //     }
+        //     else if(car==-1&&move==-1){
+        //         return 2;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+        //     else if(car==&&move==){
+        //         return ;
+        //     }
+            
+        //     return 0;
+             
+        // }
+
+        public string getAction(){
+           switch (this.action){
+            case 1:
+              return "car ";
+            case 2:
+              return "";
+            default:
+              return "";
+           }   
+        }
+
+
 
         public void makeBroad()
         {
@@ -79,17 +141,19 @@ namespace UnblockMe
         public List<int> checkStepAvailable(Car car)
         {
             List<int> returnValue = new List<int>();
-            //horizontal
+            //horizontal = 1
             if (car.alignment)
             {
                 //check on the leftside
                 if (this.metric[car.position[0]][car.position[1]-1] == 0)
                 {
+                    //can go to the left
                     returnValue.Add(-1);
                 }
                 //check on the rightside
                 if (this.metric[car.position[0]][car.position[1] + car.width] == 0)
                 {
+                    //can go to the right
                     returnValue.Add(1);
                 }
             }
@@ -120,9 +184,16 @@ namespace UnblockMe
                 {
                     foreach(int item in this.checkStepAvailable(carlist[i])){
                         Tree temp = new Tree(this.carBlueprint);
+
+                        //Console.WriteLine("\n\n...............CHILDREN NODE.........................");
+                        //Console.Write("\nCar Number " +this.carlist[i].id);
+                        // temp.action = ;
                         temp.carlist[i].move(item);
                         temp.updateBlueprint();
                         temp.makeBroad();
+                        //temp.showBroad();
+                        // Console.WriteLine("........................................");
+                        
                         temp.depth = this.depth + 1;
                         treeList.Add(temp);
                     }
