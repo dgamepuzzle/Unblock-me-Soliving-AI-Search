@@ -42,3 +42,14 @@ D:\C AI\ass1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcore
 D:\C AI\ass1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfo.cs
 D:\C AI\ass1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.dll
 D:\C AI\ass1\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.pdb
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.deps.json
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.json
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.runtimeconfig.dev.json
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.dll
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\bin\Debug\netcoreapp2.1\UnblockMe.pdb
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csprojAssemblyReference.cache
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.csproj.CoreCompileInputs.cache
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfoInputs.cache
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.AssemblyInfo.cs
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.dll
+F:\oooeee\University\Senior\AI\Unblock-me-Soliving-AI-Search\UnblockMe\UnblockMe\obj\Debug\netcoreapp2.1\UnblockMe.pdb

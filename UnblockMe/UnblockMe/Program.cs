@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace UnblockMe {
   class Program {
     static void Main (string[] args) {
+
       List<int[]> blueprint = new List<int[]> {
         new int[] {-1, 2, 0, 1, 2 },
         // new int[]{1,0,2,1,3},
@@ -30,7 +31,6 @@ namespace UnblockMe {
       };
 
       // Tree root = new Tree(EasyBlueprint);
-
       // root.makeBroad();
       // root.showBroad();
       // foreach (int i in root.checkStepAvailable(root.carlist[10]) )
@@ -42,23 +42,48 @@ namespace UnblockMe {
       //     child.makeBroad();
       //     child.showBroad();
       // }
-
       //BFS(EasyBlueprint);
       //Depth_Limited(blueprint, 8);
-      Console.Write ("------------------ Start Searching with Depth First Search --------------------");
-      //DFS (EasyBlueprint, 8);
-      IDS (EasyBlueprint);
 
-      Console.WriteLine ("--------------- Done ----------------------");
+      var watch = new System.Diagnostics.Stopwatch();
+      long dfs_time = 0;
+      long ids_time = 0;
+     
+
+      watch.Start();
+      Console.Write ("------------------ DEPTH FIRST WITH LIMIT SEARCH --------------------");
+      DFS (EasyBlueprint, 8);
+      Console.WriteLine ("----------------------- END -------------------------");
+      watch.Stop();
+      dfs_time = watch.ElapsedMilliseconds;
+      Console.WriteLine("Execution Time: " +dfs_time+" ms");
+      
+
+      if (!watch.IsRunning){
+        watch.Restart();
+      } 
+      Console.Write ("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
+      IDS (EasyBlueprint);
+      Console.WriteLine ("----------------------- END -------------------------");
+      watch.Stop();
+      ids_time = watch.ElapsedMilliseconds;
+      Console.WriteLine("Execution Time: " +ids_time+" ms");
+
+      Console.WriteLine("\n\n===============================================================================================================");
+      Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
+      Console.WriteLine("Execution Time:                   " +dfs_time+"                                       "+ids_time);
 
     }
 
     public static Tree DFS (List<int[]> blueprint, int limit) {
+
+      // ....................... Initial Setting ....................................
       Tree root = new Tree (blueprint);
       root.makeBroad ();
-      //root.showBroad();
+      
       Console.Write ("-----------------------------------------------------");
       Console.Write ("-----------------------------------------------------");
+
       Stack<Tree> gameStack = new Stack<Tree> ();
       Stack<int> path = new Stack<int> ();
 
@@ -68,10 +93,12 @@ namespace UnblockMe {
       int temp_depth = -1;
       path.Clear ();
 
+      // ....................... loop through stack ....................................
       while (gameStack.Count > 0) {
 
-        // 1. check if that node is The goal node
+        // 1. pop node from stack and save it as currentNode
         Tree currentNode = gameStack.Pop ();
+
         // path Stack
         if (temp_depth > currentNode.depth)
           for (int i = 0; i < (temp_depth - currentNode.depth + 1); i++) {
@@ -82,41 +109,46 @@ namespace UnblockMe {
         }
         path.Push (currentNode.action);
 
+        // 2. Check if currentNode is Goal Node or not
         if (currentNode.isReachGoal ()) {
+
+          //currentNode == Goal Node
           Console.Write ("\n---------------- REACH GOAL --------------\n");
           Console.WriteLine ("Number of current node " + number_curr);
           Console.Write ("Current Depth is " + currentNode.depth + "\n");
           Console.Write ("Action: " + " (" + currentNode.action + ") " + currentNode.getAction () + "\n");
-          foreach (int number in path) {
-            Console.WriteLine (number);
+          
+          foreach (int number in path) {            
+            Console.WriteLine ("Action (" +number+") " + actionsToString(number));
           }
+
           currentNode.makeBroad ();
           currentNode.showBroad ();
-          // end of search
+
+          //end of search
           break;
 
         } else {
-          // if currentNode is not Goal node
-          // expand currentNode
-
+          // currentNode != Goal node
           Console.WriteLine ("Number of current node " + number_curr);
           number_curr++;
 
+          //Expand currentNode
           currentNode.createNewTreeWithAvailableAction ();
 
           Console.Write ("Current Depth is " + currentNode.depth + "\n");
           Console.Write ("Action: " + " (" + currentNode.action + ") " + currentNode.getAction () + "\n");
-
           currentNode.makeBroad ();
           currentNode.showBroad ();
           Console.WriteLine ("........................................");
+
+          //Push currentNode's children into stack
           if (currentNode.depth < limit) {
             for (int i = currentNode.childList.Count - 1; i >= 0; i--) {
-              //child.makeBroad();
-              //child.showBroad();
               gameStack.Push (currentNode.childList[i]);
             }
           }
+
           temp_depth = currentNode.depth;
 
         }
@@ -164,9 +196,11 @@ namespace UnblockMe {
             Console.WriteLine ("Number of current node " + number_curr);
             Console.Write ("Current Depth is " + currentNode.depth + "\n");
             Console.Write ("Action: " + " (" + currentNode.action + ") " + currentNode.getAction () + "\n");
+            Console.WriteLine("\nPath to Goal node are .... ");
             foreach (int number in path) {
-              Console.WriteLine (number);
+              Console.WriteLine ("Action (" +number+") " + actionsToString(number));
             }
+            Console.WriteLine("\n");
             currentNode.makeBroad ();
             currentNode.showBroad ();
             found = true;
@@ -353,5 +387,63 @@ namespace UnblockMe {
       }
 
     }
+
+    public static string actionsToString(int actionNumber){
+      switch (actionNumber) {
+        case 1:
+          return "red car move Right";
+        case 2:
+          return "red car  move Left";
+        case 3:
+          return "car 1 move Right";
+        case 4:
+          return "car 1  move Left";
+        case 5:
+          return "car 2 move Down";
+        case 6:
+          return "car 2 move Up";
+        case 7:
+          return "car 3 move Right";
+        case 8:
+          return "car 3  move Left";
+        case 9:
+          return "car 4 move Down";
+        case 10:
+          return "car 4 move Up";
+        case 11:
+          return "car 5 move Right";
+        case 12:
+          return "car 5  move Left";
+        case 13:
+          return "car 6 move Down";
+        case 14:
+          return "car 6 move Up";
+        case 15:
+          return "car 7 move Right";
+        case 16:
+          return "car 7  move Left";
+        case 17:
+          return "car 8 move Down";
+        case 18:
+          return "car 8 move Up";
+        case 19:
+          return "car 9 move Right";
+        case 20:
+          return "car 9  move Left";
+        case 21:
+          return "car 10 move Down";
+        case 22:
+          return "car 10 move Up";
+        case 23:
+          return "car 12 move Down";
+        case 24:
+          return "car 12 move Up";
+        default:
+          return "OUT OF RANGE";
+      }
+
+
+    }
+  
   }
 }
