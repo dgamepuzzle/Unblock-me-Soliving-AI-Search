@@ -688,28 +688,46 @@
     ]
   },
   "packageFolders": {
+<<<<<<< Updated upstream
     "C:\\Users\\Chutika\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\cchay\\.nuget\\packages\\": {},
+>>>>>>> Stashed changes
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< Updated upstream
       "projectUniqueName": "F:\\oooeee\\University\\Senior\\AI\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
       "projectName": "UnblockMe",
       "projectPath": "F:\\oooeee\\University\\Senior\\AI\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
       "packagesPath": "C:\\Users\\Chutika\\.nuget\\packages\\",
       "outputPath": "F:\\oooeee\\University\\Senior\\AI\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\obj\\",
+=======
+      "projectUniqueName": "C:\\repo\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
+      "projectName": "UnblockMe",
+      "projectPath": "C:\\repo\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
+      "packagesPath": "C:\\Users\\cchay\\.nuget\\packages\\",
+      "outputPath": "C:\\repo\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\obj\\",
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
+<<<<<<< Updated upstream
         "C:\\Users\\Chutika\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+        "C:\\Users\\cchay\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+>>>>>>> Stashed changes
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -727,7 +745,6 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
