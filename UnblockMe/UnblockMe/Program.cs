@@ -48,30 +48,42 @@ namespace UnblockMe {
       var watch = new System.Diagnostics.Stopwatch();
       long dfs_time = 0;
       long ids_time = 0;
+      long compare_time = 0;
      
 
-      watch.Start();
+      
       Console.Write ("------------------ DEPTH FIRST WITH LIMIT SEARCH --------------------");
+      watch.Start();
+      long dfs_mem_start = GC.GetTotalMemory(true);
       DFS (EasyBlueprint, 8);
-      Console.WriteLine ("----------------------- END -------------------------");
+      long dfs_mem_end = GC.GetTotalMemory(true);
+      long dfs_mem = (dfs_mem_end - dfs_mem_start)/1024;
       watch.Stop();
-      dfs_time = watch.ElapsedMilliseconds;
-      Console.WriteLine("Execution Time: " +dfs_time+" ms");
+      Console.WriteLine ("----------------------- END -------------------------");
+      dfs_time = watch.ElapsedMilliseconds/1000;
+      Console.WriteLine("Execution Time: " +dfs_time+" s");
       
 
+      Console.Write ("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
       if (!watch.IsRunning){
         watch.Restart();
       } 
-      Console.Write ("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
+      long ids_mem_start = GC.GetTotalMemory(true);
       IDS (EasyBlueprint);
-      Console.WriteLine ("----------------------- END -------------------------");
+      long ids_mem_end = GC.GetTotalMemory(true);
+      long ids_mem = (ids_mem_end - ids_mem_start)/1024;
       watch.Stop();
-      ids_time = watch.ElapsedMilliseconds;
-      Console.WriteLine("Execution Time: " +ids_time+" ms");
+      Console.WriteLine ("----------------------- END -------------------------");
+      ids_time = watch.ElapsedMilliseconds/1000;
+      Console.WriteLine("Execution Time: " +ids_time+" s");
 
-      Console.WriteLine("\n\n===============================================================================================================");
+      Console.WriteLine("\n\n===============================================================================================================\n\n");
       Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
-      Console.WriteLine("Execution Time:                   " +dfs_time+"                                       "+ids_time);
+      Console.WriteLine("Execution Time:                   " +dfs_time+" sec                                "+ids_time+" sec");
+      Console.WriteLine("Memory Usage (GC):                " +dfs_mem+" KB                              "+ids_mem+" KB");
+      compare_time = dfs_time/ids_time;
+      Console.WriteLine("\n\nConclusion: IDS is faster than DFS by " + compare_time + "X");
+      
 
     }
 
@@ -232,6 +244,10 @@ namespace UnblockMe {
 
           }
         }
+        // if(limit == 2){
+        //   break;
+        // }
+
         if (!found) {
           limit++;
         }
