@@ -171,6 +171,7 @@ namespace UnblockMe
           currentNode.makeBroad();
           currentNode.showBroad();
           Console.WriteLine("........................................");
+          return root;
 
           //Push currentNode's children into stack
           if (currentNode.depth < limit)
@@ -206,7 +207,7 @@ namespace UnblockMe
       bool found = false;
       int limit = 1;
 
-      while (!found || limit != 10)
+      while (!found && limit != 10)
       {
         //push selected node
         gameStack.Push(root);
