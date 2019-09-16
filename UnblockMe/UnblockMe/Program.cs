@@ -67,26 +67,26 @@ namespace UnblockMe
       Console.WriteLine("Execution Time: " + dfs_time + " s");
 
 
-      Console.Write("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
-      if (!watch.IsRunning)
-      {
-        watch.Restart();
-      }
-      long ids_mem_start = GC.GetTotalMemory(true);
-      IDS(EasyBlueprint);
-      long ids_mem_end = GC.GetTotalMemory(true);
-      long ids_mem = (ids_mem_end - ids_mem_start) / 1024;
-      watch.Stop();
-      Console.WriteLine("----------------------- END -------------------------");
-      ids_time = watch.ElapsedMilliseconds / 1000;
-      Console.WriteLine("Execution Time: " + ids_time + " s");
+      // Console.Write("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
+      // if (!watch.IsRunning)
+      // {
+      //   watch.Restart();
+      // }
+      // long ids_mem_start = GC.GetTotalMemory(true);
+      // IDS(EasyBlueprint);
+      // long ids_mem_end = GC.GetTotalMemory(true);
+      // long ids_mem = (ids_mem_end - ids_mem_start) / 1024;
+      // watch.Stop();
+      // Console.WriteLine("----------------------- END -------------------------");
+      // ids_time = watch.ElapsedMilliseconds / 1000;
+      // Console.WriteLine("Execution Time: " + ids_time + " s");
 
-      Console.WriteLine("\n\n===============================================================================================================\n\n");
-      Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
-      Console.WriteLine("Execution Time:                   " + dfs_time + " sec                                " + ids_time + " sec");
-      Console.WriteLine("Memory Usage (GC):                " + dfs_mem + " KB                              " + ids_mem + " KB");
-      compare_time = dfs_time / ids_time;
-      Console.WriteLine("\n\nConclusion: IDS is faster than DFS by " + compare_time + "X");
+      // Console.WriteLine("\n\n===============================================================================================================\n\n");
+      // Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
+      // Console.WriteLine("Execution Time:                   " + dfs_time + " sec                                " + ids_time + " sec");
+      // Console.WriteLine("Memory Usage (GC):                " + dfs_mem + " KB                              " + ids_mem + " KB");
+      // compare_time = dfs_time / ids_time;
+      // Console.WriteLine("\n\nConclusion: IDS is faster than DFS by " + compare_time + "X");
 
 
     }
@@ -171,7 +171,6 @@ namespace UnblockMe
           currentNode.makeBroad();
           currentNode.showBroad();
           Console.WriteLine("........................................");
-          return root;
 
           //Push currentNode's children into stack
           if (currentNode.depth < limit)
