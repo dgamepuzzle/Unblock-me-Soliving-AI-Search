@@ -18,20 +18,71 @@ namespace UnblockMe
         // new int[]{8,4,4,0,2},
         // new int[]{7,5,1,1,3}
       };
+      // Problem 0 
+      // List<int[]> EasyBlueprint = new List<int[]> {
+      //   new int[] {-1, 3, 1, 1, 2 },
+      //   new int[] { 1, 1, 4, 1, 2 },
+      //   new int[] { 2, 1, 1, 0, 2 },
+      //   new int[] { 3, 2, 4, 1, 3 },
+      //   new int[] { 4, 2, 3, 0, 2 },
+      //   new int[] { 5, 4, 1, 1, 2 },
+      //   new int[] { 6, 5, 1, 0, 2 },
+      //   new int[] { 7, 4, 3, 1, 2 },
+      //   new int[] { 8, 5, 4, 0, 2 },
+      //   new int[] { 9, 6, 2, 1, 2 },
+      //   new int[] { 10, 3, 5, 0, 3 },
+      //   new int[] { 12, 3, 6, 0, 2 },
+      // };
+
+      // Problem 1
+      // List<int[]> EasyBlueprint = new List<int[]> {
+      //   new int[] {-1, 3, 1, 1, 2 },
+      // };
+
+      // Problem 2
+      // List<int[]> EasyBlueprint = new List<int[]> {
+      //   new int[] {-1, 3, 1, 1, 2 },
+      //   new int[] { 2, 1, 4, 0, 2 },
+      //   new int[] { 3, 1, 2, 1, 2 },
+      //   new int[] { 4, 3, 4, 0, 2 },
+      //   new int[] { 5, 2, 5, 1, 2 },
+      //   new int[] { 6, 3, 6, 0, 3 },
+      //   new int[] { 7, 6, 1, 1, 2 },
+      //   new int[] { 8, 4, 3, 0, 3 },
+      //   new int[] { 9, 6, 4, 1, 3 },
+      // };
+
+
+      // Problem 3
+      // List<int[]> EasyBlueprint = new List<int[]> {
+      //   new int[] {-1, 3, 1, 1, 2 },
+      //   new int[] { 2, 1, 6, 0, 3 },
+      //   new int[] { 4, 5, 6, 0, 2 },
+      // };
+
+      // Problem 4
       List<int[]> EasyBlueprint = new List<int[]> {
         new int[] {-1, 3, 1, 1, 2 },
-        new int[] { 1, 1, 4, 1, 2 },
-        new int[] { 2, 1, 1, 0, 2 },
-        new int[] { 3, 2, 4, 1, 3 },
-        new int[] { 4, 2, 3, 0, 2 },
-        new int[] { 5, 4, 1, 1, 2 },
-        new int[] { 6, 5, 1, 0, 2 },
-        new int[] { 7, 4, 3, 1, 2 },
-        new int[] { 8, 5, 4, 0, 2 },
-        new int[] { 9, 6, 2, 1, 2 },
-        new int[] { 10, 3, 5, 0, 3 },
-        new int[] { 12, 3, 6, 0, 2 },
+        new int[] { 2, 2, 3, 0, 2 },
+        new int[] { 3, 4, 3, 1, 2 },
+        new int[] { 4, 5, 4, 0, 2 },
+        new int[] { 5, 6, 1, 1, 2 },
+        new int[] { 6, 2, 5, 0, 3 },
+        new int[] { 7, 1, 1, 1, 2 },
+        new int[] { 8, 4, 2, 0, 2 },
+        new int[] { 9, 5, 5, 1, 2 },
+        new int[] { 10, 3, 6, 0, 2 },
+        new int[] { 11, 1, 5, 1, 2 },
+        new int[] { 12, 1, 4, 0, 2 },
+
       };
+
+
+
+
+
+
+
 
       // Tree root = new Tree(EasyBlueprint);
       // root.makeBroad();
@@ -58,7 +109,7 @@ namespace UnblockMe
       Console.Write("------------------ DEPTH FIRST WITH LIMIT SEARCH --------------------");
       watch.Start();
       long dfs_mem_start = GC.GetTotalMemory(true);
-      DFS(EasyBlueprint, 8);
+      DFS(EasyBlueprint, 10);
       long dfs_mem_end = GC.GetTotalMemory(true);
       long dfs_mem = (dfs_mem_end - dfs_mem_start) / 1024;
       watch.Stop();
@@ -67,26 +118,26 @@ namespace UnblockMe
       Console.WriteLine("Execution Time: " + dfs_time + " s");
 
 
-      Console.Write("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
-      if (!watch.IsRunning)
-      {
-        watch.Restart();
-      }
-      long ids_mem_start = GC.GetTotalMemory(true);
-      IDS(EasyBlueprint);
-      long ids_mem_end = GC.GetTotalMemory(true);
-      long ids_mem = (ids_mem_end - ids_mem_start) / 1024;
-      watch.Stop();
-      Console.WriteLine("----------------------- END -------------------------");
-      ids_time = watch.ElapsedMilliseconds / 1000;
-      Console.WriteLine("Execution Time: " + ids_time + " s");
+      // Console.Write("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
+      // if (!watch.IsRunning)
+      // {
+      //   watch.Restart();
+      // }
+      // long ids_mem_start = GC.GetTotalMemory(true);
+      // IDS(EasyBlueprint);
+      // long ids_mem_end = GC.GetTotalMemory(true);
+      // long ids_mem = (ids_mem_end - ids_mem_start) / 1024;
+      // watch.Stop();
+      // Console.WriteLine("----------------------- END -------------------------");
+      // ids_time = watch.ElapsedMilliseconds / 1000;
+      // Console.WriteLine("Execution Time: " + ids_time + " s");
 
-      Console.WriteLine("\n\n===============================================================================================================\n\n");
-      Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
-      Console.WriteLine("Execution Time:                   " + dfs_time + " sec                                " + ids_time + " sec");
-      Console.WriteLine("Memory Usage (GC):                " + dfs_mem + " KB                              " + ids_mem + " KB");
-      compare_time = dfs_time / ids_time;
-      Console.WriteLine("\n\nConclusion: IDS is faster than DFS by " + compare_time + "X");
+      // Console.WriteLine("\n\n===============================================================================================================\n\n");
+      // Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
+      // Console.WriteLine("Execution Time:                   " + dfs_time + " sec                                " + ids_time + " sec");
+      // Console.WriteLine("Memory Usage (GC):                " + dfs_mem + " KB                              " + ids_mem + " KB");
+      // compare_time = dfs_time / ids_time;
+      // Console.WriteLine("\n\nConclusion: IDS is faster than DFS by " + compare_time + "X");
 
 
     }
@@ -171,6 +222,8 @@ namespace UnblockMe
           currentNode.makeBroad();
           currentNode.showBroad();
           Console.WriteLine("........................................");
+
+          return root;
 
           //Push currentNode's children into stack
           if (currentNode.depth < limit)
