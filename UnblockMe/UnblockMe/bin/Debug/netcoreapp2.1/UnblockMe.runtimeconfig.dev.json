@@ -1,13 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-<<<<<<< Updated upstream
-      "C:\\Users\\Chutika\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Chutika\\.nuget\\packages",
-=======
-      "C:\\Users\\cchay\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\cchay\\.nuget\\packages",
->>>>>>> Stashed changes
+      "C:\\Users\\ruji-\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ruji-\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
