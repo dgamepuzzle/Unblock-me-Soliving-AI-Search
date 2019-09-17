@@ -243,7 +243,7 @@ namespace UnblockMe
       {
         Console.WriteLine("!!! Not reach goal !!!");
       }
-      return root;
+      // return root;
 
     }
 
@@ -352,7 +352,7 @@ namespace UnblockMe
       {
         Console.WriteLine("!!! Not reach goal !!!");
       }
-      return root;
+      // return root;
 
     }
 
