@@ -740,13 +740,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\CE_KMITL\\CE-4D-1\\AI\\assignment_1\\Temp\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\obj\\UnblockMe.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

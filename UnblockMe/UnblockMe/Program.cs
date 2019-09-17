@@ -36,7 +36,7 @@ namespace UnblockMe
 
       // Problem 1
       // List<int[]> EasyBlueprint = new List<int[]> {
-      //   new int[] {-1, 3, 1, 1, 2 },
+      //   new int[] {-1, 3, 1, 1, 2 }
       // };
 
       // Problem 2
@@ -52,36 +52,25 @@ namespace UnblockMe
       //   new int[] { 9, 6, 4, 1, 3 },
       // };
 
-
       // Problem 3
       // List<int[]> EasyBlueprint = new List<int[]> {
       //   new int[] {-1, 3, 1, 1, 2 },
-      //   new int[] { 2, 1, 6, 0, 3 },
-      //   new int[] { 4, 5, 6, 0, 2 },
+      //   new int[] { 2, 1, 6, 0, 6 },
       // };
 
       // Problem 4
       List<int[]> EasyBlueprint = new List<int[]> {
         new int[] {-1, 3, 1, 1, 2 },
-        new int[] { 2, 2, 3, 0, 2 },
-        new int[] { 3, 4, 3, 1, 2 },
-        new int[] { 4, 5, 4, 0, 2 },
-        new int[] { 5, 6, 1, 1, 2 },
-        new int[] { 6, 2, 5, 0, 3 },
-        new int[] { 7, 1, 1, 1, 2 },
-        new int[] { 8, 4, 2, 0, 2 },
-        new int[] { 9, 5, 5, 1, 2 },
-        new int[] { 10, 3, 6, 0, 2 },
-        new int[] { 11, 1, 5, 1, 2 },
-        new int[] { 12, 1, 4, 0, 2 },
 
+        new int[] { 1, 2, 1, 1, 2 },
+        new int[] { 2, 1, 6, 0, 3 },
+        new int[] { 3, 2, 4, 1, 2 },
+        new int[] { 4, 5, 6, 0, 2 },
+        new int[] { 5, 5, 3, 1, 3 },
+        new int[] { 6, 4, 2, 0, 3 },
+        new int[] { 8, 2, 3, 0, 3 },
+        new int[] { 10, 3, 5, 0, 2 },
       };
-
-
-
-
-
-
 
 
       // Tree root = new Tree(EasyBlueprint);
@@ -102,6 +91,8 @@ namespace UnblockMe
       var watch = new System.Diagnostics.Stopwatch();
       long dfs_time = 0;
       long ids_time = 0;
+      long dfs_ms_time = 0;
+      long ids_ms_time = 0;
       long compare_time = 0;
 
 
@@ -115,29 +106,38 @@ namespace UnblockMe
       watch.Stop();
       Console.WriteLine("----------------------- END -------------------------");
       dfs_time = watch.ElapsedMilliseconds / 1000;
-      Console.WriteLine("Execution Time: " + dfs_time + " s");
+      dfs_ms_time = watch.ElapsedMilliseconds;
+      Console.WriteLine("Execution Time: " + (dfs_time == 0 ? dfs_ms_time : dfs_time) + (dfs_time == 0 ? " ms" : " sec"));
 
 
-      // Console.Write("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
-      // if (!watch.IsRunning)
-      // {
-      //   watch.Restart();
-      // }
-      // long ids_mem_start = GC.GetTotalMemory(true);
-      // IDS(EasyBlueprint);
-      // long ids_mem_end = GC.GetTotalMemory(true);
-      // long ids_mem = (ids_mem_end - ids_mem_start) / 1024;
-      // watch.Stop();
-      // Console.WriteLine("----------------------- END -------------------------");
-      // ids_time = watch.ElapsedMilliseconds / 1000;
-      // Console.WriteLine("Execution Time: " + ids_time + " s");
+      Console.Write("------------------ ITERATIVE DEPTH FIRST SEARCH --------------------");
+      if (!watch.IsRunning)
+      {
+        watch.Restart();
+      }
+      long ids_mem_start = GC.GetTotalMemory(true);
+      IDS(EasyBlueprint);
+      long ids_mem_end = GC.GetTotalMemory(true);
+      long ids_mem = (ids_mem_end - ids_mem_start) / 1024;
+      watch.Stop();
+      Console.WriteLine("----------------------- END -------------------------");
+      ids_time = watch.ElapsedMilliseconds / 1000;
+      ids_ms_time = watch.ElapsedMilliseconds;
+      Console.WriteLine("Execution Time: " + (ids_time == 0 ? ids_ms_time : ids_time) + (ids_time == 0 ? " ms" : " sec"));
 
-      // Console.WriteLine("\n\n===============================================================================================================\n\n");
-      // Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
-      // Console.WriteLine("Execution Time:                   " + dfs_time + " sec                                " + ids_time + " sec");
-      // Console.WriteLine("Memory Usage (GC):                " + dfs_mem + " KB                              " + ids_mem + " KB");
-      // compare_time = dfs_time / ids_time;
-      // Console.WriteLine("\n\nConclusion: IDS is faster than DFS by " + compare_time + "X");
+      Console.WriteLine("\n\n===============================================================================================================\n\n");
+      Console.WriteLine("                      Depth First Search with Limit     |     Iterative Depth First Search     ");
+      Console.WriteLine("Execution Time:                   " + (dfs_time == 0 ? dfs_ms_time : dfs_time) + (dfs_time == 0 ? " ms" : " sec") + "                                " + (ids_time == 0 ? ids_ms_time : ids_time) + (ids_time == 0 ? " ms" : " sec"));
+      Console.WriteLine("Memory Usage (GC):                " + dfs_mem + " KB                              " + ids_mem + " KB");
+      if (dfs_time == 0 || ids_time == 0)
+      {
+        compare_time = dfs_ms_time / ids_ms_time;
+      }
+      else
+      {
+        compare_time = dfs_time / ids_time;
+      }
+      Console.WriteLine("\n\nConclusion: IDS is faster than DFS by " + compare_time + "X");
 
 
     }
@@ -223,7 +223,7 @@ namespace UnblockMe
           currentNode.showBroad();
           Console.WriteLine("........................................");
 
-          return root;
+          // return root;
 
           //Push currentNode's children into stack
           if (currentNode.depth < limit)
@@ -259,7 +259,7 @@ namespace UnblockMe
       bool found = false;
       int limit = 1;
 
-      while (!found && limit != 10)
+      while (!found)
       {
         //push selected node
         gameStack.Push(root);
@@ -348,6 +348,10 @@ namespace UnblockMe
 
       }
 
+      if (!found)
+      {
+        Console.WriteLine("!!! Not reach goal !!!");
+      }
       return root;
 
     }
@@ -537,58 +541,56 @@ namespace UnblockMe
       switch (actionNumber)
       {
         case 1:
-          return "red car move Right";
-        case 2:
           return "red car  move Left";
+        case 2:
+          return "red car move Right";
         case 3:
-          return "car 1 move Right";
-        case 4:
           return "car 1  move Left";
+        case 4:
+          return "car 1 move Right";
         case 5:
-          return "car 2 move Down";
-        case 6:
           return "car 2 move Up";
+        case 6:
+          return "car 2 move Down";
         case 7:
-          return "car 3 move Right";
-        case 8:
           return "car 3  move Left";
+        case 8:
+          return "car 3 move Right";
         case 9:
-          return "car 4 move Down";
-        case 10:
           return "car 4 move Up";
+        case 10:
+          return "car 4 move Down";
         case 11:
-          return "car 5 move Right";
-        case 12:
           return "car 5  move Left";
+        case 12:
+          return "car 5 move Right";
         case 13:
-          return "car 6 move Down";
-        case 14:
           return "car 6 move Up";
+        case 14:
+          return "car 6 move Down";
         case 15:
-          return "car 7 move Right";
-        case 16:
           return "car 7  move Left";
+        case 16:
+          return "car 7 move Right";
         case 17:
-          return "car 8 move Down";
-        case 18:
           return "car 8 move Up";
+        case 18:
+          return "car 8 move Down";
         case 19:
-          return "car 9 move Right";
-        case 20:
           return "car 9  move Left";
+        case 20:
+          return "car 9 move Right";
         case 21:
-          return "car 10 move Down";
-        case 22:
           return "car 10 move Up";
+        case 22:
+          return "car 10 move Down";
         case 23:
-          return "car 12 move Down";
-        case 24:
           return "car 12 move Up";
+        case 24:
+          return "car 12 move Down";
         default:
           return "";
       }
-
-
     }
 
   }

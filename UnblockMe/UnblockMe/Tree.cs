@@ -30,56 +30,55 @@ namespace UnblockMe {
     public int action = 0;
 
     public int setAction (int car, int move) {
-      if (car == -1 && move == 1) {
+      if (car == -1 && move == -1) {
         return 1;
-      } else if (car == -1 && move == -1) {
+      } else if (car == -1 && move == 1) {
         return 2;
-      } else if (car == 1 && move == 1) {
-        return 3;
       } else if (car == 1 && move == -1) {
+        return 3;
+      } else if (car == 1 && move == 1) {
         return 4;
-      } else if (car == 2 && move == 1) {
-        return 5;
       } else if (car == 2 && move == -1) {
+        return 5;
+      } else if (car == 2 && move == 1) {
         return 6;
-      } else if (car == 3 && move == 1) {
-        return 7;
       } else if (car == 3 && move == -1) {
+        return 7;
+      } else if (car == 3 && move == 1) {
         return 8;
-      } else if (car == 4 && move == 1) {
-        return 9;
       } else if (car == 4 && move == -1) {
+        return 9;
+      } else if (car == 4 && move == 1) {
         return 10;
-      } else if (car == 5 && move == 1) {
-        return 11;
       } else if (car == 5 && move == -1) {
+        return 11;
+      } else if (car == 5 && move == 1) {
         return 12;
-      } else if (car == 6 && move == 1) {
-        return 13;
       } else if (car == 6 && move == -1) {
+        return 13;
+      } else if (car == 6 && move == 1) {
         return 14;
-      } else if (car == 7 && move == 1) {
-        return 15;
       } else if (car == 7 && move == -1) {
+        return 15;
+      } else if (car == 7 && move == 1) {
         return 16;
-      } else if (car == 8 && move == 1) {
-        return 17;
       } else if (car == 8 && move == -1) {
+        return 17;
+      } else if (car == 8 && move == 1) {
         return 18;
-      } else if (car == 9 && move == 1) {
-        return 19;
       } else if (car == 9 && move == -1) {
+        return 19;
+      } else if (car == 9 && move == 1) {
         return 20;
-      } else if (car == 10 && move == 1) {
-        return 21;
       } else if (car == 10 && move == -1) {
+        return 21;
+      } else if (car == 10 && move == 1) {
         return 22;
-      } else if (car == 12 && move == 1) {
-        return 23;
       } else if (car == 12 && move == -1) {
+        return 23;
+      } else if (car == 12 && move == 1) {
         return 24;
       }
-
       return 0;
 
     }
@@ -87,53 +86,53 @@ namespace UnblockMe {
     public string getAction () {
       switch (this.action) {
         case 1:
-          return "red car move Right";
-        case 2:
           return "red car  move Left";
+        case 2:
+          return "red car move Right";
         case 3:
-          return "car 1 move Right";
-        case 4:
           return "car 1  move Left";
+        case 4:
+          return "car 1 move Right";
         case 5:
-          return "car 2 move Down";
-        case 6:
           return "car 2 move Up";
+        case 6:
+          return "car 2 move Down";
         case 7:
-          return "car 3 move Right";
-        case 8:
           return "car 3  move Left";
+        case 8:
+          return "car 3 move Right";
         case 9:
-          return "car 4 move Down";
-        case 10:
           return "car 4 move Up";
+        case 10:
+          return "car 4 move Down";
         case 11:
-          return "car 5 move Right";
-        case 12:
           return "car 5  move Left";
+        case 12:
+          return "car 5 move Right";
         case 13:
-          return "car 6 move Down";
-        case 14:
           return "car 6 move Up";
+        case 14:
+          return "car 6 move Down";
         case 15:
-          return "car 7 move Right";
-        case 16:
           return "car 7  move Left";
+        case 16:
+          return "car 7 move Right";
         case 17:
-          return "car 8 move Down";
-        case 18:
           return "car 8 move Up";
+        case 18:
+          return "car 8 move Down";
         case 19:
-          return "car 9 move Right";
-        case 20:
           return "car 9  move Left";
+        case 20:
+          return "car 9 move Right";
         case 21:
-          return "car 10 move Down";
-        case 22:
           return "car 10 move Up";
+        case 22:
+          return "car 10 move Down";
         case 23:
-          return "car 12 move Down";
-        case 24:
           return "car 12 move Up";
+        case 24:
+          return "car 12 move Down";
         default:
           return "";
       }
