@@ -256,7 +256,6 @@ namespace UnblockMe
 
                 }
             }
-            Console.Write("other_car" + other_car);
             this.cost = car_1_cost + other_car;
             return car_1_cost + other_car;
         }
