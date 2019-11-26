@@ -688,23 +688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ruji-\\.nuget\\packages\\": {},
+    "C:\\Users\\heart\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CE_KMITL\\CE-4D-1\\AI\\assignment_2\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
+      "projectUniqueName": "D:\\C AI\\ass1\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
       "projectName": "UnblockMe",
-      "projectPath": "D:\\CE_KMITL\\CE-4D-1\\AI\\assignment_2\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
-      "packagesPath": "C:\\Users\\ruji-\\.nuget\\packages\\",
-      "outputPath": "D:\\CE_KMITL\\CE-4D-1\\AI\\assignment_2\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\obj\\",
+      "projectPath": "D:\\C AI\\ass1\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\UnblockMe.csproj",
+      "packagesPath": "C:\\Users\\heart\\.nuget\\packages\\",
+      "outputPath": "D:\\C AI\\ass1\\Unblock-me-Soliving-AI-Search\\UnblockMe\\UnblockMe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ruji-\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\heart\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
